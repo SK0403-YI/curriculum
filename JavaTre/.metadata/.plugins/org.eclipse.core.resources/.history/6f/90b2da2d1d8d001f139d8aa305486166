@@ -1,0 +1,11 @@
+package test04;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		int dataA;
+		int dataB;
+		
+		//データ投入メソッド
+		dataA = putNumberA();
+		

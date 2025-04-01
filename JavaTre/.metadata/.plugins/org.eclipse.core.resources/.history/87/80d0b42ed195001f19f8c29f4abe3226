@@ -1,0 +1,33 @@
+package test02;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		// エンジンAからエンジンDまで、同じエンジンの種類だが違うエンジン個体です。
+				// Engineというデータ型クラス(鋳型)を元に「new」で複製しています。
+				Engine engineA = new Engine();
+				Engine engineB = new Engine();
+				Engine engineC = new Engine();
+				Engine engineD = new Engine();
+
+				// 違う個体なので
+				// 同じ処理であるものの、run動作をさせると個別に別々に保持されたデータが表示されます。
+				engineA.run();
+
+				engineB.initialization("1号機");
+				engineB.run();
+
+				engineC.initialization("2号機");
+				engineC.run();
+
+				engineD.initialization("3号機");
+				engineD.run();
+
+				//各エンジンの起動状態を確認します。
+				engineA.conditionCheck(engineA.initializate, engineA.condition);
+				engineB.conditionCheck(engineB.initializate, engineB.condition);
+				engineC.conditionCheck(engineC.initializate, engineC.condition);
+				engineD.conditionCheck(engineD.initializate, engineD.condition);
+	}
+
+}

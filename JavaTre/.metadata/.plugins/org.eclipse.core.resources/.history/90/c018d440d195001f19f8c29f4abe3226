@@ -1,0 +1,90 @@
+package test03.in;
+
+import test03.on.onner;
+import test03.on.OnnerSub;
+import test03.under.Underer;
+import test03.under.UndererSub;
+public class inner {
+	public String in_inner_public;
+	protected String in_inner_protected;
+	String in_inner_default;
+	private String in_inner_private;
+
+	public void test() {
+		/*
+		 * ①自分のクラス内の変数を使用できるか確認
+		 */
+		in_inner_public = "test";
+		in_inner_protected = "test";
+		in_inner_default = "test";
+		in_inner_private = "test";
+
+		// 警告文回避用
+		System.out.println(in_inner_private);
+
+		/*
+		 * ②同じパッケージ直下のInnerSubクラスの変数を使えるのか
+		 */
+		InnerSub innerSub = new InnerSub();
+		innerSub.in_innerSub_public = "test";
+		innerSub.in_innerSub_protected = "test";
+		innerSub.in_innerSub_default = "test";
+		// privateはクラス内でしか使えないため、エラー
+		innerSub.in_innerSub_private = "test";
+
+		/*
+		 * ③別パッケージのOnnerクラス、OnnerSubの変数を使えるのか
+		 */
+		Onner onner = new Onner();
+		onner.on_onner_public = "test";
+
+		// protctedは同じパッケージ内でないため、エラー
+		onner.on_onner_protected = "test";
+
+		// デフォルトで使えるのは同じパッケージのみのため、エラー
+		onner.on_onner_default = "test";
+
+		// privateはクラス内でしか使えないため、エラー
+		onner.on_onner_private = "test";
+
+		OnnerSub onnersub = new OnnerSub();
+		onnersub.on_onnerSub_public = "test";
+
+		// protctedは同じパッケージ内でないため、エラー
+		onnersub.on_onnerSub_protected = "test";
+
+		// デフォルトで使えるのは同じパッケージ内のため、エラー
+		onnersub.on_onnerSub_default = "test";
+
+		// privateはクラス内でしか使えないため、エラー
+		onnersub.on_onnerSub_private = "test";
+
+		/*
+		 * ③別パッケージのUndererクラス、UndererSubの変数を使えるのか
+		 */
+		Underer underer = new Underer();
+		underer.under_underer_public = "test";
+
+		// protctedは同じパッケージ内でないため、エラー
+		underer.under_underer_protected = "test";
+
+		// デフォルトで使えるのは同じパッケージのみのため、エラー
+		underer.under_underer_default = "test";
+
+		// privateはクラス内でしか使えないため、エラー
+		underer.under_underer_private = "test";
+
+		UndererSub undererSub = new UndererSub();
+		undererSub.under_undererSub_public = "test";
+
+		// protctedは同じパッケージ内でないため、エラー
+		undererSub.under_undererSub_protected = "test";
+
+		// デフォルトで使えるのは同じパッケージ内のため、エラー
+		undererSub.under_undererSub_default = "test";
+
+		// privateはクラス内でしか使えないため、エラー
+		undererSub.under_undererSub_private = "test";
+	}
+
+}

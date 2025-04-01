@@ -1,0 +1,12 @@
+package check01;
+
+public class Main {
+	
+	//問題１スコープ1にint型の変数xとyを作成してください。
+	
+	public static void main(String[] args) {
+		
+		//
+	}
+
+}
